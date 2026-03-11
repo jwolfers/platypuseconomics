@@ -93,6 +93,58 @@
             margin-top: 1.5rem;
         }
 
+        .fact-card {
+            margin-top: 2.5rem;
+            text-align: left;
+            background: #fff;
+            border: 1px solid #e0e0dd;
+            border-radius: 10px;
+            padding: 1.5rem 1.75rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+
+        .fact-card .fact-number {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.4rem;
+        }
+
+        .fact-card .fact-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+
+        .fact-card .fact-body {
+            font-size: 0.95rem;
+            color: #333;
+            line-height: 1.75;
+        }
+
+        .another-btn {
+            margin-top: 1.25rem;
+            display: inline-block;
+            padding: 0.5rem 1.2rem;
+            border: 1.5px solid #1a1a1a;
+            border-radius: 6px;
+            background: none;
+            color: #1a1a1a;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+            font-family: inherit;
+        }
+
+        .another-btn:hover {
+            background: #1a1a1a;
+            color: #fafaf8;
+        }
+
         footer {
             margin-top: 3rem;
             font-size: 0.8rem;
@@ -106,8 +158,28 @@
         <p class="subtitle">with Justin Wolfers</p>
 
         <p class="coming-soon">Coming soon...</p>
+
+        <div class="fact-card">
+            <div class="fact-number" id="fact-number"></div>
+            <div class="fact-title" id="fact-title"></div>
+            <div class="fact-body" id="fact-body"></div>
+            <div style="text-align: center;">
+                <button class="another-btn" onclick="showRandomFact()">Another one</button>
+            </div>
+        </div>
     </div>
 
     <footer>&copy; 2026 Justin Wolfers</footer>
+
+    <script src="facts.js"></script>
+    <script>
+        function showRandomFact() {
+            const fact = facts[Math.floor(Math.random() * facts.length)];
+            document.getElementById('fact-number').textContent = 'No. ' + fact.number + ' of 100';
+            document.getElementById('fact-title').textContent = fact.title;
+            document.getElementById('fact-body').textContent = fact.body;
+        }
+        showRandomFact();
+    </script>
 </body>
 </html>
