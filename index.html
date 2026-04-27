@@ -3,249 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Platypus Economics with Justin Wolfers</title>
-    <meta name="description" content="Justin Wolfers — Economist, Professor, Author, Podcaster.">
+    <title>Platypus Economics — Coming Soon</title>
+    <meta name="description" content="Platypus Economics with Justin Wolfers — coming soon.">
+    <meta name="robots" content="noindex">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
             --abyss: #0e4a53;
             --surf: #2f9e97;
-            --sun: #d9a315;
-            --coral: #d93a43;
-            --algae: #006b2e;
-            --orchid: #8e4aa0;
-            --ink: #0b0b0a;
             --shell: #ffffff;
             --surf-tint: #a8ecef;
-            --sun-tint: #ffd966;
-            --coral-tint: #ff9aa0;
         }
+
+        html, body { height: 100%; }
 
         body {
             font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif;
-            color: var(--ink);
-            background: var(--shell);
-            line-height: 1.6;
-            min-height: 100vh;
-        }
-
-        .hero {
             background: var(--abyss);
-            padding: 3rem 2rem 4rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 6px;
-            background: linear-gradient(90deg, var(--surf), var(--sun), var(--coral), var(--algae), var(--orchid));
-        }
-
-        .hero-content {
-            max-width: 640px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-logo {
-            width: 160px;
-            height: auto;
-            margin-bottom: 1rem;
-            opacity: 0.92;
-        }
-
-        .brand-name {
-            font-family: 'Inter', Helvetica, Arial, sans-serif;
-            font-weight: 800;
-            font-size: 3rem;
             color: var(--shell);
-            letter-spacing: 0.02em;
-            text-transform: uppercase;
-            line-height: 1.1;
-            margin-bottom: 0.3rem;
-        }
-
-        .brand-subtitle {
-            font-family: 'Inter', Helvetica, Arial, sans-serif;
-            font-weight: 600;
-            font-size: 1rem;
-            color: var(--surf-tint);
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-        }
-
-        .main {
-            max-width: 640px;
-            margin: 0 auto;
-            padding: 2.5rem 2rem 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
         }
 
         .coming-soon {
-            text-align: center;
-            margin-bottom: 2.5rem;
-        }
-
-        .coming-soon-text {
-            display: inline-block;
-            font-family: 'Inter', Helvetica, Arial, sans-serif;
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: var(--surf);
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            padding: 0.5rem 1.5rem;
-            border: 2px solid var(--surf);
-            border-radius: 4px;
-        }
-
-        .links {
-            display: flex;
-            flex-direction: column;
-            gap: 0.65rem;
-            margin-bottom: 2.5rem;
-        }
-
-        .links a {
-            display: block;
-            padding: 0.85rem 1.5rem;
-            border: 2px solid var(--abyss);
-            border-radius: 6px;
-            text-decoration: none;
-            color: var(--abyss);
-            font-family: 'Inter', Helvetica, Arial, sans-serif;
-            font-weight: 600;
-            font-size: 0.95rem;
-            text-align: center;
-            transition: background 0.2s, color 0.2s, border-color 0.2s;
-        }
-
-        .links a:hover {
-            background: var(--abyss);
-            color: var(--shell);
-        }
-
-        .fact-card {
-            background: #f7fafa;
-            border-left: 4px solid var(--surf);
-            border-radius: 0 8px 8px 0;
-            padding: 1.5rem 1.75rem;
-        }
-
-        .fact-number {
-            font-family: 'Inter', Helvetica, Arial, sans-serif;
-            font-size: 0.75rem;
-            font-weight: 700;
-            color: var(--surf);
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            margin-bottom: 0.4rem;
-        }
-
-        .fact-title {
-            font-family: 'Inter', Helvetica, Arial, sans-serif;
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: var(--abyss);
-            margin-bottom: 0.75rem;
-            line-height: 1.4;
-        }
-
-        .fact-body {
-            font-size: 0.95rem;
-            color: #333;
-            line-height: 1.75;
-        }
-
-        .another-btn {
-            margin-top: 1.25rem;
-            display: inline-block;
-            padding: 0.5rem 1.4rem;
-            border: 2px solid var(--abyss);
-            border-radius: 4px;
-            background: none;
-            color: var(--abyss);
-            font-family: 'Inter', Helvetica, Arial, sans-serif;
-            font-size: 0.85rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.2s, color 0.2s;
-            text-transform: uppercase;
+            font-weight: 800;
+            font-size: clamp(2rem, 8vw, 4rem);
             letter-spacing: 0.04em;
-        }
-
-        .another-btn:hover {
-            background: var(--abyss);
-            color: var(--shell);
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            font-size: 0.8rem;
-            color: #999;
-            border-top: 1px solid #eee;
-        }
-
-        @media (max-width: 480px) {
-            .brand-name {
-                font-size: 2rem;
-            }
-            .hero {
-                padding: 2rem 1.5rem 3rem;
-            }
-            .main {
-                padding: 2rem 1.5rem;
-            }
+            text-transform: uppercase;
+            color: var(--surf-tint);
         }
     </style>
 </head>
 <body>
-    <div class="hero">
-        <div class="hero-content">
-            <img src="Platypus Working.png" alt="Platypus Economics mascot" class="hero-logo">
-            <div class="brand-name">Platypus<br>Economics</div>
-            <div class="brand-subtitle">with Justin Wolfers</div>
-        </div>
-    </div>
-
-    <div class="main">
-        <div class="coming-soon">
-            <span class="coming-soon-text">Coming Soon</span>
-        </div>
-
-        <div class="fact-card">
-            <div class="fact-number" id="fact-number"></div>
-            <div class="fact-title" id="fact-title"></div>
-            <div class="fact-body" id="fact-body"></div>
-            <div style="text-align: center;">
-                <button class="another-btn" onclick="showRandomFact()">Another one</button>
-            </div>
-        </div>
-    </div>
-
-    <footer>&copy; 2026 Justin Wolfers</footer>
-
-    <script src="facts.js"></script>
-    <script>
-        function showRandomFact() {
-            const fact = facts[Math.floor(Math.random() * facts.length)];
-            document.getElementById('fact-number').textContent = 'No. ' + fact.number + ' of 500';
-            document.getElementById('fact-title').textContent = fact.title;
-            document.getElementById('fact-body').textContent = fact.body;
-        }
-        showRandomFact();
-    </script>
+    <main>
+        <div class="coming-soon">Coming soon</div>
+    </main>
 </body>
 </html>
